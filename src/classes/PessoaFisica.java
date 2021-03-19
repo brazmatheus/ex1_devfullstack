@@ -15,6 +15,8 @@ public class PessoaFisica extends Pessoa{
 		this.genero = genero;
 	}
 	
+	public PessoaFisica() {}
+	
 	public int getCpf() {
 		return cpf;
 	}
@@ -51,5 +53,12 @@ public class PessoaFisica extends Pessoa{
 
 	    return idade;
 	}
+
+	@Override
+	public String toString() {
+		return "PessoaFisica [cpf=" + cpf + ", dtNascimento=" + dtNascimento + ", genero=" + genero + "]";
+	}
+	
+	
 	
 }

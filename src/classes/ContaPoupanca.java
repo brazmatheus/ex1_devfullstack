@@ -8,6 +8,10 @@ public class ContaPoupanca extends Conta{
 		super(cliente, nrConta, saldo);
 		this.txCorrecao = txCorrecao;
 	}
+	
+	public ContaPoupanca() {
+
+	}
 
 	public double getTxCorrecao() {
 		return txCorrecao;

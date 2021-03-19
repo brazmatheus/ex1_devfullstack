@@ -8,6 +8,8 @@ public class ContaEspecial extends Conta{
 		super(cliente, nrConta, saldo);
 		this.limite = limite;
 	}
+	
+	public ContaEspecial() { }
 
 	public double getLimite() {
 		return limite;

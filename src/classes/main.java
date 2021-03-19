@@ -3,11 +3,16 @@ package classes;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Calendar.Builder;
+import java.util.Scanner;
 
 public class main {
 
-	public static void main(String[] args) {
+	private static final Scanner sc = null;
 
+	public static void main(String[] args) throws ValorInvalidoException {
+
+		ArrayList<Conta> listaConta = new ArrayList<Conta>();
+		
 		Pessoa p1 = new Pessoa(1, "Pessoa1", "Rua1");
 		Pessoa p2 = new Pessoa(2, "Pessoa2", "Rua2");
 		Pessoa p3 = new Pessoa(3, "Pessoa3", "Rua3");
@@ -30,28 +35,6 @@ public class main {
 		ContaEspecial ce_pf2 = new ContaEspecial(pf2, 2, 200.00, 400.00);
 		ContaPoupanca cp_pj4 = new ContaPoupanca(pj4, 4, 400.00, 0.4);
 		
-		System.out.println("Olá "+ ce_pf1.getCliente().getNome() + ", antes de sacar, você tinha " + ce_pf1.getSaldo() );
-		ce_pf1.sacar(43.00);
-		System.out.println("E agora é " + ce_pf1.getSaldo());
-		
-		System.out.println("------------------------------------------------");
-		
-		System.out.println("Olá "+ cp_pj3.getCliente().getNome() + ", antes de sacar, você tinha " + cp_pj3.getSaldo() );
-		cp_pj3.sacar(70.00);
-		System.out.println("E agora é " + cp_pj3.getSaldo());
-		
-		System.out.println("Olá " + cp_pj3.getCliente().getNome() + ", antes de depositar, você tinha " + cp_pj3.getSaldo() );
-		cp_pj3.depositar(30.00);
-		System.out.println("E agora é " + cp_pj3.getSaldo());
-		
-		System.out.println("remetente " + cp_pj3.getCliente().getNome() + " - " + cp_pj3.getSaldo() + " destino " + cp_pj4.getCliente().getNome() + " - " + cp_pj4.getSaldo());
-		ce_pf1.transferir(30.00, cp_pj3, cp_pj4);
-		System.out.println("remetente " + cp_pj3.getCliente().getNome() + " - " + cp_pj3.getSaldo() + " destino " + cp_pj4.getCliente().getNome() + " - " + cp_pj4.getSaldo());
-		
-		System.out.println(ce_pf1.getCliente().getNome() + " - idade: " + pf1.getIdade());
-	
-		ArrayList<Conta> listaConta = new ArrayList<Conta>();
-		
 		listaConta.add(ce_pf1);
 		listaConta.add(ce_pf2);
 		listaConta.add(cp_pj3);
@@ -64,6 +47,11 @@ public class main {
 		}
 		
 		System.out.println("Saldo somado: " + saldoSomado);
+		
+		Menu m = new Menu(listaConta);
+		
+		m.menuEnum();
+		
 	}
 
 }

@@ -12,6 +12,10 @@ public class Conta {
 		this.saldo = saldo;
 	}
 	
+	public Conta() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Pessoa getCliente() {
 		return cliente;
 	}

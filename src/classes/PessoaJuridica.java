@@ -11,6 +11,10 @@ public class PessoaJuridica extends Pessoa{
 		this.atividade = atividade;
 	}
 	
+	public PessoaJuridica() {
+		
+	}
+	
 	public int getCnpj() {
 		return cnpj;
 	}
@@ -23,5 +27,12 @@ public class PessoaJuridica extends Pessoa{
 	public void setAtividade(String atividade) {
 		this.atividade = atividade;
 	}
+
+	@Override
+	public String toString() {
+		return "PessoaJuridica [cnpj=" + cnpj + ", atividade=" + atividade + "]";
+	}
+	
+	
 	
 }
